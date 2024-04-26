@@ -29,13 +29,21 @@ const fetch = async (req, res, next) => {
     var l = userList.length;
     if (l !== 0)
       return res.status(201).json(userList);
-    else
-      return res.status(201).json({ "result": "Server Error" });
   } catch (error) {
     console.error("Error fetching user data:", error);
     return res.status(500).json({ "error": "Internal Server Error" });
   }
 }
+
+const userDisplay = async (req, res) => {
+  try {
+      const data = await UserSchemaModel.find();
+      res.send(data);
+  } catch (error) {
+      console.error("Error displaying tasks:", error);
+      res.status(500).send("Internal Server Error");
+  }
+};
 
 
 var deleteUser = async (request, response, next) => {
@@ -98,4 +106,5 @@ module.exports={
   deleteUser,
   updateUser,
   login,
+  userDisplay
 }

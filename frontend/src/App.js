@@ -8,11 +8,11 @@ import Register from "./Components/Register";
 import Login from "./Components/Login";
 import AdminHome from "./Components/AdminHome"
 import UserHome from "./Components/UserHome"
-import Description from "./Components/Description";
 import Manageusers from "./Components/ManageUsers";
 import Prioritylist from "./Components/priorList";
 import Message from "./Components/Message";
 import MessageDisplay from "./Components/MessageDisplay";
+import Descript from "./Components/Descript";
 
 
 const App=()=>{
@@ -31,6 +31,7 @@ const App=()=>{
           <Route path="login" element={<Login/>} />  
           <Route path="manageuser" element={<Manageusers/>} />
           <Route path="priority" element={<Prioritylist/>} />
+          <Route path="Des/:description/:date/:descriptiondetail" element={<Descript/>} />
           <Route path="admin" element={<AdminHome/>} >
             <Route index element={<AdminHome/>}/>
           </Route>
@@ -39,7 +40,7 @@ const App=()=>{
           </Route>
           <Route path="message" element={<Message/>} /> 
           <Route path="messagedisplay" element={<MessageDisplay/>} /> 
-          <Route path="/Des/:description/:date/:descriptiondetail" element={<Description />} />
+          
           </Route>
           
 

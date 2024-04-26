@@ -1,0 +1,36 @@
+.Pagelayout{
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    justify-content: center;
+}
+
+.Adminhome{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    padding: 20px;
+}
+
+.adminTop{
+    margin-top:8% ;
+}
+.lastestmessage{
+    display: flex;
+    justify-content:center;
+    flex-direction: column;
+    padding: 20px;
+    border: 1px solid rgb(216, 216, 216);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.425);
+    width: 350px;
+    height: auto;
+    border-radius: 10px;   
+    margin-top: 80px;
+}
+
+.lastestmessage p{
+    font-size: 14px;
+    color: rgb(66, 66, 66);
+    font-weight: 600 ;
+}
+

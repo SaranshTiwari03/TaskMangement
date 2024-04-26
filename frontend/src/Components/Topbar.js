@@ -23,7 +23,7 @@ const Topbar=()=>{
             <IoMdNotificationsOutline className="bell-icon" />
                 
                 <div className="profile-pic">
-                    <img className="Topbarimg" src={"./ProfileImg/"+img} alt="" width="40px"/>
+                    <img className="Topbarimg" src={"./ProfileImg/"+img} alt="" />
                     
                 </div>
             </div>

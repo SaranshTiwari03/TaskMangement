@@ -3,15 +3,12 @@ import {Link, useNavigate} from "react-router-dom";
 import "../StyleComponents/Sidebar.css";
 import {useState,useEffect} from 'react';
 
-import { BsFillHouseFill, BsClipboardData, BsCalendar, BsPeople, BsChatDots, BsGearFill,BsPower } from 'react-icons/bs';
+import { BsFillHouseFill, BsClipboardData,BsPeople, BsChatDots, BsGearFill,BsPower } from 'react-icons/bs';
 import { MdLibraryAdd ,MdOutlineLowPriority } from "react-icons/md";
   
 const Sidebar2=()=>{
     const myNav=useNavigate();
-    const [isOpen, setIsOpen] = useState(true);
     const [Headercontent,setHeadercontent]= useState();
-    
-   
 
     const handleLogout=()=>{
     localStorage.removeItem("token");
@@ -30,7 +27,7 @@ const Sidebar2=()=>{
 
 
    useEffect(()=>{
-    if(localStorage.getItem("role")=="admin"){
+    if(localStorage.getItem("role")==="admin"){
         setHeadercontent(
             <>
           <li><BsFillHouseFill className="icon" /><a href="#"><Link to="admin" className="Nlinks" >Overview</Link></a></li>
@@ -40,7 +37,7 @@ const Sidebar2=()=>{
           <li><BsPeople className="icon" /><a href="#"><Link to="manageuser"  className="Nlinks" >Team</Link></a></li>
 
           </>
-    )}else if(localStorage.getItem("role")=="user"){
+    )}else if(localStorage.getItem("role")==="user"){
         setHeadercontent(
             <>
           <li><BsFillHouseFill className="icon" /><a href="#"><Link to="user" className="Nlinks" >Overview</Link></a></li>

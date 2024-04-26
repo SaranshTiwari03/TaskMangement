@@ -13,6 +13,7 @@ router.patch("/update",userController.updateUser);
 
 router.post("/login",userController.login);
 
+router.get("/Display",userController.userDisplay);
 
 module.exports=router;
 

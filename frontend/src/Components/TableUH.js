@@ -1,12 +1,13 @@
 import React from 'react'
 import { useState,useEffect } from "react";
 import axios from "axios";
+import { _apiurltask } from '../APIurlpath/_apiurl';
 
 function TableUH() {
     const[taskData,setTaskData]=useState([]);
     var SNo=0;
     const loadData=()=>{
-        axios.get("http://localhost:8000/task/Display").then((res)=>{
+        axios.get( _apiurltask+ "Display").then((res)=>{
         setTaskData(res.data)
         })
     }
