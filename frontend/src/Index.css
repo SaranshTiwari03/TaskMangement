@@ -1,0 +1,344 @@
+body{
+    overflow-x: hidden;
+}
+.Header{
+    width: 100%;
+    padding: 20px;
+    background-color: aqua;
+}
+
+/* Google Fonts Import Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+.navbar{
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #333;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  color: white;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  margin-top: 80px;
+}
+.navbar h1{
+  font-size: 28px;
+}
+.nav-links{
+  display: flex;
+  align-items: center;
+  background: #333;
+  padding: 10px 15px;
+  
+}
+.nav-links li{
+  list-style: none;
+  margin: 0 12px;
+}
+.nav-links li a{
+  position: relative;
+  color: white;
+  font-size: 20px;
+  padding: 6px 0;
+  text-decoration: none;
+}
+.nav-links li a:before{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: #34efdf;
+  border-radius: 12px;
+  transition: all 0.4s ease;
+}
+.nav-links li a:hover:before{
+  width: 100%;
+}
+.nav-links li.center a:before{
+  left: 50%;
+  transform: translateX(-50%);
+}
+.nav-links li.upward a:before{
+  width: 100%;
+  bottom: -5px;
+  opacity: 0;
+}
+.nav-links li.upward a:hover:before{
+  bottom: 0px;
+  opacity: 1;
+}
+.nav-links li.forward a:before{
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s ease;
+}
+.nav-links li.forward a:hover:before{
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+
+
+.Navset{
+    display: flex;
+    margin: auto;
+}
+
+
+.Nlinks{
+    color: black;
+    text-decoration: none;
+}
+
+.button {
+    text-decoration: none;
+    line-height: 1;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    position: relative;
+    left:20px;
+    box-shadow: 10px 10px 20px rgba(0,0,0,.1);
+    background-color: #fff;
+    color: #121212;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .button-decor {
+    position: absolute;
+    inset: 0;
+    background-color: var(--clr);
+    transform: translateX(-100%);
+    transition: transform .3s;
+    z-index: 0;
+  }
+  
+  .button-content {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .button__icon {
+    width: 48px;
+    height: 30px;
+    border-radius: 30px;
+    background-color: var(--clr);
+    display: grid;
+    place-items: center;
+  }
+  
+  .button__text {
+    display: inline-block;
+    transition: color .2s;
+    padding: 2px 1.5rem 2px;
+    padding-left: .75rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 150px;
+  }
+  
+  .button:hover .button__text {
+    color: #fff;
+  }
+  
+  .button:hover .button-decor {
+    transform: translate(0);
+  }
+
+
+
+
+  #adminHome{
+    margin-bottom: 100px;
+  }
+
+  #UserHome{
+    margin-bottom: 100px;
+  }
+
+
+
+
+
+
+
+
+
+
+  .footer {
+    background-color: #212529; 
+    color: #fff; 
+    padding: 20px 0; 
+    position: relative;
+    width: 100%; 
+    bottom: 0; 
+    text-align: center; 
+  }
+  
+  .footer-text {
+    margin-top: 20px; 
+  }
+  
+  .container1{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .footer-section {
+    flex: 1;
+    
+  }
+  
+
+
+  .footer-section h3 {
+    margin-bottom: 10px;
+  }
+  
+  .footer-section p {
+    margin: 0;
+  }
+  
+  .footer-section ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: 5px;
+  }
+  .footer-section ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  .social-icons {
+    padding: 0;
+  }
+  
+  .social-icons li {
+    display: inline;
+    margin-right: 10px;
+  }
+  
+  .social-icons li:last-child {
+    margin-right: 0;
+  }
+  
+  .social-icons a {
+    color: #fff;
+    font-size: 20px;
+  }
+  
+  .social-icons a:hover {
+    color: #ccc;
+  }
+  
+
+
+  .ff{
+    background-color: #222222; 
+    margin: 0px;
+    padding: 10px;
+    padding-bottom: 5px;
+}
+.footer{
+    display: flex;
+    margin-top: 2%;
+    background-color: #222222; 
+}
+.footerl{
+  background-color: #222222; 
+    color: #CCCCCC;
+    margin-left: 3%;
+    margin-top: 2%;
+    margin-bottom: 3%;
+}
+.footerl p a{
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+.footerl p a:hover{
+    color: #4caf50;
+    text-decoration: none;
+    font-weight: 600;
+}
+.L1{
+    margin-left: 20px;
+    margin-top: -10px;
+    height: 85px;
+    border-left:.2px solid #CCCCCC;
+}
+.L2{
+    margin-top: 25px;
+    width: 95%;
+    border-top: 1px solid grey;
+}
+
+#fimg{
+  margin-left: 40px;
+  margin-top: -10px;
+}
+.icn{
+    margin-top:10px;
+    margin-left: 20px;
+    display: flex;
+}
+#icn{
+    padding:10px;
+    font-size: 26px;
+    color:#ffffff;
+}
+#icn:hover{
+    color:#4caf50;
+    transition-duration: 0.8s;
+}
+#icn1{
+    color:black;
+    padding: 12px;
+    font-size: 24px;
+}
+#icn1:hover{
+    color:#4caf50;
+    transition-duration: 0.8s;
+}
+
+
+
+
+
+.displayscreen {
+  display: flex;
+  height: calc(100vh - 80px); /* Optional: Set the height of the parent container */
+}
+
+.sidecontent {
+  flex: 1; /* This will take up 20% of the width */
+  background-color: lightgray; /* Optional: Set background color */
+}
+
+.outlet {
+  flex: 4; /* This will take up 80% of the width */
+  background-color: lightblue; /* Optional: Set background color */
+}
+
+
+

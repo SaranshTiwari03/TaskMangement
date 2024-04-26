@@ -1,0 +1,93 @@
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px; 
+    padding: 0 40px; 
+    
+  }
+  .top-bar {
+    background-color: #ffffff; 
+    color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999; 
+  }
+  
+  .logo-section {
+    flex: 20%;
+    margin-left: 30px;
+  }
+  
+  .search-section {
+    flex: 40%; 
+    display: flex;
+    align-items: center;
+    border: 1px solid #dddddd; 
+    border-radius: 8px; 
+    padding: 8px; 
+  }
+  
+  .search-section input {
+    flex: 90%; 
+    border: none;
+    outline: none;
+    padding: 6px 10px;
+    font-size: 16px;
+  }
+  
+  .search-section i {
+    flex: 10%; 
+    color: #999999; 
+  }
+  
+  .notification-section {
+    flex: 20%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  
+  .bell-icon {
+    width: 50px;
+    height: 35px;
+    color:#444444;
+    border-radius: 50%; 
+    position: relative;
+  }
+  
+  
+  .profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #cccccc; 
+  }
+  
+
+
+  /* top bar for login/register pages */
+  .top-bar1{
+    background-color: #ffffff00; 
+    color: #fff;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999; 
+  }

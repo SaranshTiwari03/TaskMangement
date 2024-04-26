@@ -1,0 +1,74 @@
+.Pagelayout{
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    justify-content: center;
+}
+
+.Userhome{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    margin-top: 5%;
+    padding: 20px;
+}
+.Piechart{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid rgb(216, 216, 216);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.425);
+    width: 350px;
+    height: 350px;
+    border-radius: 10px;
+}
+
+.calender{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid rgb(216, 216, 216);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.425);
+    width: 350px;
+    height: 350px;
+    border-radius: 10px;
+    
+}
+
+.doughnut{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid rgb(216, 216, 216);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.425);
+    width: 350px;
+    height: 350px;
+    border-radius: 10px;
+}
+
+.tableUH{
+    width:100%; 
+    display: flex;
+    justify-content: space-around;
+    margin-top:40px ;
+}
+
+.TableTask{
+    padding:20px;
+    width:60%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border: 1px solid rgb(216, 216, 216);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.425);
+}
+
+.table-responsive {
+    max-height:300px;
+    width: 900px;
+    padding: 20px;
+    
+}
