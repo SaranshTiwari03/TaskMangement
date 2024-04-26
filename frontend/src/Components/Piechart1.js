@@ -63,10 +63,9 @@ const ans =taskData.map((key)=>{
 		return (
 		<div className='Piechart'>
 			<CanvasJSChart className="chart-div" options = {options}
-				/* onRef={ref => this.chart = ref} */
+			
 			/>
-			{/*You can get reference to the chart instance as shown above using onRef. This allows you to access all chart properties and methods*/}
-           
+			
 		</div>
 		);
 	}

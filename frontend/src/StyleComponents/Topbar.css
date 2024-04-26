@@ -68,15 +68,20 @@
   
   
   .profile-pic {
-    width: 40px;
-    height: 40px;
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
     background-color: #cccccc; 
   }
-  
+  .profile-pic img{
+    width: 55px;
+    height: 55px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
 
 
-  /* top bar for login/register pages */
+  /* CSS for Topbar of login/register pages */
   .top-bar1{
     background-color: #ffffff00; 
     color: #fff;
@@ -90,4 +95,18 @@
     left: 0;
     right: 0;
     z-index: 999; 
+  }
+
+  .Nav-Button{
+    width: 90px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #2d79f3; 
+    border: 1px solid white;
+    box-shadow: 0px 0px 4px 2px rgba(180, 180, 180, 0.658); 
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
   }

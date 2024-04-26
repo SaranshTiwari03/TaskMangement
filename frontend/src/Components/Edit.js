@@ -1,71 +1,8 @@
-// import { useParams,useNavigate } from "react-router-dom";
-// import axios from "axios";
-// import { useEffect } from "react";
-// import { useState } from "react";
-// const Edit=()=>{
-//     const {id}=useParams();
-//     const myNav=useNavigate();
-//     const[input, setinput]=useState({})
-
-//     const loadData=()=>{
-//         let url="http://localhost:8000/task/geteditdata"
-//         axios.post(url,{id:id}).then((res)=>{
-//          setinput(res.data)
-//          console.log(res.data)
-//         })
-//     }
-
-//     const handleInput=(e)=>{
-//         let name=e.target.name
-//         let value=e.target.value
-//         setinput(values=>({...values,[name]:value}))
-//     }
-
-//     const handleSubmit=()=>{
-        
-//         let url="http://localhost:8000/task/editsave"
-//         axios.post(url,input).then((res)=>{
-//             alert('updated')
-//             myNav("/display")
-//         })
-//     }
-
-
-//     useEffect(()=>{
-//         loadData()
-//     },[])
-
-
-//     return(
-//         <>
-
-// <center>
-// <h1 class="display-5 text-uppercase mb-4" >Edit Your  <span class="text-primary">Task Here</span></h1> </center>
-
-
-// <div class="py-5 "  >
-//         <div class=" py-5" >
-//             <div class="row g-8">
-//                 <div class="col-lg-5" style={{margin:"auto"}}>
-                
-
-                  
-//                 </div>
-//             </div>
-//         </div>
-//     </div>
-    
-//         </>
-//     )
-// }
-
-// export default Edit;
-
-
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import "../StyleComponents/Editmodal.css"; // Import your CSS file for styling
+import {_apiurltask } from '../APIurlpath/_apiurl';
 
 const Edit = () => {
   const { id } = useParams();
@@ -73,10 +10,10 @@ const Edit = () => {
   const [input, setInput] = useState({});
 
   const loadData = () => {
-    let url = "http://localhost:8000/task/geteditdata";
+    let url = _apiurltask+"geteditdata";
     axios.post(url, { id: id }).then((res) => {
       setInput(res.data);
-      console.log(res.data);
+     
     });
   };
 
@@ -87,7 +24,7 @@ const Edit = () => {
   };
 
   const handleSubmit = () => {
-    let url = "http://localhost:8000/task/editsave";
+    let url = _apiurltask+ "editsave";
     axios.post(url, input).then((res) => {
       alert("updated");
       myNav("/display");

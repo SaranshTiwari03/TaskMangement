@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import axios from 'axios';
-import {_apiurluser } from "./APIurlpath/_apiurl";
+import {_apiurluser } from '../APIurlpath/_apiurl';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -12,11 +12,16 @@ function Register() {
     const [ password , setPassword ] = useState();
     const [ gender , setGender ] = useState();  
     const [ image , setImage] =useState();
+    const  [count, setCount] = useState("");
     const navigate= useNavigate();
 
-    const handleSubmit=()=>{
+    const handleImage=(e)=>{
+        setImage(e.target.value);
+        setCount(e.target.files[0]);
+    }
+
+    const handleSubmit=async()=>{
         var userDetails={"name":name,"email":email,"password":password,"gender":gender,"image":image}
-        
         axios.post(_apiurluser+"save",userDetails).then((response)=>{
           setOutput(response.data.result);
           setName("");
@@ -26,13 +31,34 @@ function Register() {
         }).catch((err)=>{
           console.log(err);
         })
+
+        let urlimg="http://localhost:8000/upload";
+        const formdata=new FormData();
+        formdata.append('file',count);
+
+        const response=await axios.post(urlimg,formdata, {
+             headers: {
+            'Content-Type':'multipart/form-data'
+            }
+        })
+            console.log(response.data)
+            alert("data uploaded")
+
     }
 
     const NavLogin=()=>{
         navigate("/login");
     }
 
-  return (
+  return (<>
+    <div className="top-bar1">
+        <div className="logo-section">
+            <img src="./images/logo task_1@2x.png" width="150px" alt="Logo" />
+        </div> 
+        <div className="notification-section">
+            <div onClick={NavLogin} className="Nav-Button">Sign In</div>
+        </div>
+     </div>
     <div className='register'>
         <center>
             <font style={{"color":"//#123D52"}}>{output}</font>
@@ -40,8 +66,9 @@ function Register() {
             <div className="form1">
 
             <div class="title_container">
-                <p class="title">Create a new account</p>
+                <p class="title">Create a new account </p>
                 <span class="subtitle">Get started with our app, just create an account and enjoy the experience.</span>
+                
             </div>
                 <div className="flex-column1">
                     <label for="name">Name:</label>
@@ -70,7 +97,7 @@ function Register() {
                 <div className="flex-column1">
                     <label for="image">Image:</label> 
                     <div className="inputForm">
-                        <input type="file" className="input2" placeholder="Enter your Password" value={image} onChange={(e) => setImage(e.target.value)} />
+                        <input type="file" className="input2" placeholder="Enter your Password" value={image} onChange={(e) => handleImage(e)} />
                     </div>
                 </div>
             
@@ -108,6 +135,7 @@ function Register() {
 
       
     </div>
+    </>
   )
 }
 

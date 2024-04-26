@@ -97,5 +97,5 @@ module.exports={
   fetch,
   deleteUser,
   updateUser,
-  login
+  login,
 }

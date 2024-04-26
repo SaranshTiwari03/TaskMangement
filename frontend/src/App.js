@@ -12,6 +12,7 @@ import Description from "./Components/Description";
 import Manageusers from "./Components/ManageUsers";
 import Prioritylist from "./Components/priorList";
 import Message from "./Components/Message";
+import MessageDisplay from "./Components/MessageDisplay";
 
 
 const App=()=>{
@@ -37,6 +38,7 @@ const App=()=>{
                <Route index element={<UserHome/>}/>
           </Route>
           <Route path="message" element={<Message/>} /> 
+          <Route path="messagedisplay" element={<MessageDisplay/>} /> 
           <Route path="/Des/:description/:date/:descriptiondetail" element={<Description />} />
           </Route>
           

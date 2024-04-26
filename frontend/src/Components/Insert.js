@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import "../StyleComponents/Insertmodal.css"; 
 import { useNavigate } from "react-router-dom";
+import {_apiurltask } from '../APIurlpath/_apiurl';
 
 
 const Insert = () => {
@@ -14,10 +15,9 @@ const Insert = () => {
   };
 
   const handleSubmit = () => {
-    let url = "http://localhost:8000/task/insert";
+    let url = _apiurltask + "insert";
     axios.post(url, input).then((res) => {
       alert("Task saved successfully");
-      console.log(res);
     });
   };
 

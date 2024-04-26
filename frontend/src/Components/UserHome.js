@@ -21,7 +21,7 @@ const Userhome=()=> {
                             <div>
                             <Calender/>
                             </div>  
-                    </div>
+                      </div>
                         <div>
                             <Table/>
                         </div>

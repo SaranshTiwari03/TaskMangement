@@ -2,6 +2,7 @@ import { useState,useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom"
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {_apiurltask } from '../APIurlpath/_apiurl';
 
 const Display=()=>{
 
@@ -43,7 +44,7 @@ const Display=()=>{
 
 
   const loadData=()=>{
-          axios.get("http://localhost:8000/task/Display").then((res)=>{
+          axios.get(_apiurltask+"Display").then((res)=>{
           setTaskData(res.data)
           })
   }
@@ -57,7 +58,7 @@ const Display=()=>{
       const handleToggleStatus = async (id, status) => {
           try {
             const newStatus = status === 'pending' ? 'completed': 'pending';
-            const updatedTodo = await axios.put(`http://localhost:8000/task/Display/${id}`, { status: newStatus });
+            const updatedTodo = await axios.put(_apiurltask+`Display/${id}`, { status: newStatus });
             setTaskData(taskData.map(todo => (todo._id === id ? updatedTodo.data : todo)));
           } catch (error) {
             console.error(error);
@@ -66,37 +67,30 @@ const Display=()=>{
 
 
         const del = (id) => {
-        
-          const confirmDelete = window.confirm("Are you sure you want to delete this item?");
-      
-          
-          if (confirmDelete) {
-              
-              const url = "http://localhost:8000/task/Delete";
-              
-              
-              axios.post(url, { id: id })
-                  .then((res) => {
-                      
-                      loadData();
-                  })
-                  .catch((error) => {
-                      console.error("Error deleting item:", error);
-                  });
-          }
-      };
+
+          const confirmDelete = window.confirm("Are you sure you want to delete this item?"); 
+            if (confirmDelete) {
+                      const url = _apiurltask+"Delete";
+
+                axios.post(url, { id: id })
+                    .then((res) => {
+                        loadData();
+                    })
+                    .catch((error) => {
+                        console.error("Error deleting item:", error);
+                    });
+              }
+          };
       
       
       
       const edit=(id)=>{
-      
           mynav("/edit/"+id); 
-      
       }    
 
         const descriptionHere = ( description,date, descriptiondetail ) => {
-      mynav(`/Des/${description}/${date}/${descriptiondetail}`);
-    };
+        mynav(`/Des/${description}/${date}/${descriptiondetail}`);
+      };
       
 
   const mydata=records.map((key, index) => {
@@ -152,9 +146,9 @@ const Display=()=>{
                             <thead style={{color:"white",backgroundColor:"#212529"}}>
                                 <tr>
                                 <th>Title</th>
-                                <th style={{width:" 150px",height: "40px"}}>description</th>
+                                <th >description</th>
                                 <th>date</th>
-                                <th width="250">status</th>
+                                <th width="280">status</th>
                                 <th>Edit</th>
                                 <th>Delete</th>
                                 </tr>

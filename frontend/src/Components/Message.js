@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import "../StyleComponents/Message.css"; 
 import { useNavigate } from "react-router-dom";
-
+import {_apiurlmessage } from '../APIurlpath/_apiurl';
 
 
 const Message = () => {
@@ -15,7 +15,7 @@ const Message = () => {
   };
 
   const handleSubmit = () => {
-    let url = "http://localhost:8000/message/insert";
+    let url = _apiurlmessage + "insert";
     axios.post(url, input).then((res) => {
       alert("Message sent successfully");
       setInput(" ");

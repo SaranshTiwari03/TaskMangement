@@ -1,7 +1,7 @@
 import "../StyleComponents/Login.css"
 import { useState } from 'react';
 import axios from 'axios';
-import {_apiurluser } from './APIurlpath/_apiurl';
+import {_apiurluser } from '../APIurlpath/_apiurl';
 import { useNavigate } from 'react-router-dom';
 
 function Login() {
@@ -53,54 +53,66 @@ function Login() {
         navigate("/register");
     }
 
-  return (
-    <div className="login">
-        <center>
-        <font style={{"color":"//#123D52"}}>{output}</font>
-        <div className="form">
-        <div class="title_container">
-                <p class="title">Login to your Account</p>
-                <span class="subtitle">Get started with our app, just log in to your account and enjoy the experience.</span>
-            </div>
-            <div className="flex-column">
-                <label for="email">Email address:</label>
-            </div>
-            <div className="inputForm">
-                <i class="fa-solid fa-at" style={{color: "#000000"}}></i>
-                <input type="text" className="input" placeholder="Enter your Email" value={email} onChange={(e)=> setEmail(e.target.value)} />
-            </div>
-            
-            <div className="flex-column">
-                <label for="pwd">Password:</label>
-            </div>
-            <div className="inputForm">
-                <i class="fa-solid fa-lock" style={{color: "#000000"}}></i>
-                <input type="password" className="input" placeholder="Enter your Password" value={password} onChange={(e) => setPassword(e.target.value)} />
-            </div>
-            
-            <div className="flex-row">
-                <div>
-                <input type="checkbox" />
-                <label>Remember me </label>
-                </div>
-                <span className="span">Forgot password?</span>
-            </div>
-            
-            <button onClick={handleSubmit} className="button-submit">Sign In</button>
-            
-            <p className="p">Don't have an account? <span onClick={NavRegistration} className="span">Sign Up</span></p>
-            
-            <p className="p line">Or With</p>
-            
-            <div className="flex-row">
-                <button className="btn google"><img src="./Images/google.png" width="18px" alt="" />Google</button>
-                
-                <button className="btn apple"><i class="fa-brands fa-apple" style={{color: "#000000"}}></i> Apple</button>
+  return(
+    <>
+        <div className="top-bar1">
+            <div className="logo-section">
+                <img src="./images/logo task_1@2x.png" width="150px" alt="Logo" />
+            </div> 
+            <div className="notification-section">
+                <div onClick={NavRegistration} className="Nav-Button">Sign Up</div>
             </div>
         </div>
-        </center>
-    </div>
-  );
-              }
+    
+        <div className="login">
+            <center>
+            <font style={{"color":"//#123D52"}}>{output}</font>
+            <div className="form">
+            <div class="title_container">
+                    <p class="title">Login to your Account</p>
+                    <span class="subtitle">Get started with our app, just log in to your account and enjoy the experience.</span>
+                </div>
+                <div className="flex-column">
+                    <label for="email">Email address:</label>
+                </div>
+                <div className="inputForm">
+                    <i class="fa-solid fa-at" style={{color: "#000000"}}></i>
+                    <input type="text" className="input" placeholder="Enter your Email" value={email} onChange={(e)=> setEmail(e.target.value)} />
+                </div>
+                
+                <div className="flex-column">
+                    <label for="pwd">Password:</label>
+                </div>
+                <div className="inputForm">
+                    <i class="fa-solid fa-lock" style={{color: "#000000"}}></i>
+                    <input type="password" className="input" placeholder="Enter your Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                </div>
+                
+                <div className="flex-row">
+                    <div>
+                    <input type="checkbox" />
+                    <label>Remember me </label>
+                    </div>
+                    <span className="span">Forgot password?</span>
+                </div>
+                
+                <button onClick={handleSubmit} className="button-submit">Sign In</button>
+                
+                <p className="p">Don't have an account? <span onClick={NavRegistration} className="span">Sign Up</span></p>
+                
+                <p className="p line">Or With</p>
+                
+                <div className="flex-row">
+                    <button className="btn google"><img src="./Images/google.png" width="18px" alt="" />Google</button>
+                    
+                    <button className="btn apple"><i class="fa-brands fa-apple" style={{color: "#000000"}}></i> Apple</button>
+                </div>
+            </div>
+            </center>
+        </div>
+
+    </>
+    );
+}
 
 export default Login;

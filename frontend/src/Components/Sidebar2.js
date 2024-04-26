@@ -4,7 +4,7 @@ import "../StyleComponents/Sidebar.css";
 import {useState,useEffect} from 'react';
 
 import { BsFillHouseFill, BsClipboardData, BsCalendar, BsPeople, BsChatDots, BsGearFill,BsPower } from 'react-icons/bs';
-import { MdLibraryAdd } from "react-icons/md";
+import { MdLibraryAdd ,MdOutlineLowPriority } from "react-icons/md";
   
 const Sidebar2=()=>{
     const myNav=useNavigate();
@@ -36,10 +36,8 @@ const Sidebar2=()=>{
           <li><BsFillHouseFill className="icon" /><a href="#"><Link to="admin" className="Nlinks" >Overview</Link></a></li>
           <li><MdLibraryAdd  className="icon" /><a href="#"><Link to="insert" className="Nlinks" >Insert Task</Link></a></li>
           <li><BsClipboardData className="icon" /><a href="#"><Link to="display" className="Nlinks" >Manage Task</Link></a></li> 
-          <li><BsCalendar className="icon" /><a href="#">Calendar</a></li>
+          <li><BsChatDots className="icon" /><a href="#"><Link to="messagedisplay" className="Nlinks" >Message</Link></a></li>
           <li><BsPeople className="icon" /><a href="#"><Link to="manageuser"  className="Nlinks" >Team</Link></a></li>
-          <li><BsChatDots className="icon" /><a href="#">Messages</a></li>
-          <li><BsGearFill className="icon" /><a href="#">Settings</a></li>
 
           </>
     )}else if(localStorage.getItem("role")=="user"){
@@ -47,7 +45,7 @@ const Sidebar2=()=>{
             <>
           <li><BsFillHouseFill className="icon" /><a href="#"><Link to="user" className="Nlinks" >Overview</Link></a></li>
           <li><BsClipboardData className="icon" /><a href="#"><Link to="display" className="Nlinks" >Manage Task</Link></a></li> 
-          <li><BsCalendar className="icon" /><a href="#"><Link to="priority" className="Nlinks" >Priority</Link></a></li>
+          <li><MdOutlineLowPriority  className="icon" /><a href="#"><Link to="priority" className="Nlinks" >Priority</Link></a></li>
           <li><BsChatDots className="icon" /><a href="#"><Link to="message" className="Nlinks" >Message</Link></a></li>
           <li><BsGearFill className="icon" /><a href="#">Settings</a></li>
 

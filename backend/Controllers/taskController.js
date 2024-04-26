@@ -71,7 +71,6 @@ const taskEditData = async (req, res) => {
         const id = req.body.id;
         const data = await taskModel.findById(id);
         res.json(data);
-        console.log(data);
     } catch (error) {
         console.error("Error fetching task for editing:", error);
         res.status(500).send("Internal Server Error");

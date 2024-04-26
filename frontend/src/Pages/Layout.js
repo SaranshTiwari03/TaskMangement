@@ -37,19 +37,7 @@ const Layout=()=>{
     )
     }else{
     setHeadercontent(<>
-    <div className="top-bar1">
-            <div className="logo-section">
-                
-                <img src="./images/logo task_1@2x.png" width="150px" alt="Logo" />
-            </div>
-            
-            <div className="notification-section">
-                
-            
-                
-                <div className="profile-pic"></div>
-            </div>
-        </div>
+    
 
     {/* <nav class="navbar">
         <h1>TMS</h1>
