@@ -1,10 +1,9 @@
 const url = require("url");
-
 const UserSchemaModel = require('../Models/user.model.js');
 const jwt = require('jsonwebtoken') ;
 const rs = require('randomstring');
 
-
+// Saves user data
 var save = async (req, res, next) => {
   try {
       var userDetails = req.body;
@@ -22,6 +21,7 @@ var save = async (req, res, next) => {
   }
 }
 
+// Fetches user data based on conditions
 const fetch = async (req, res, next) => {
   try {
     var condition_object = url.parse(req.url, true).query;
@@ -35,6 +35,7 @@ const fetch = async (req, res, next) => {
   }
 }
 
+// Displays all user data
 const userDisplay = async (req, res) => {
   try {
       const data = await UserSchemaModel.find();
@@ -45,7 +46,7 @@ const userDisplay = async (req, res) => {
   }
 };
 
-
+// Deletes a user
 var deleteUser = async (request, response, next) => {
   try {
     var user = await UserSchemaModel.find(request.body);
@@ -63,6 +64,7 @@ var deleteUser = async (request, response, next) => {
   }
 }
 
+// Updates user data
 var updateUser = async (request, response, next) => {
   try {
     let userDetails = await UserSchemaModel.findOne(request.body.condition_object);
@@ -80,6 +82,7 @@ var updateUser = async (request, response, next) => {
   }
 }
 
+// User login
 var login = async (req, res, next) => {
   try {
     var userDetails = req.body;

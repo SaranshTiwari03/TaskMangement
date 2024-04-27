@@ -1,19 +1,15 @@
-const messageModel = require("../Models/messageModel");
+const messageModel=require("../Models/messageModel")
 
 
-
+// Inserts a new message into the database
 const messageInsert = async (req, res) => {
     try {
-        
         let uname = req.body.uname;
-        let message= req.body.message;
-      
+        let message = req.body.message;
 
         const messagedata = new messageModel({
-
             uname: uname,
-            message:message,
-        
+            message: message,
         });
 
         await messagedata.save();
@@ -24,6 +20,7 @@ const messageInsert = async (req, res) => {
     }
 };
 
+// Displays all messages from the database
 const messageDisplay = async (req, res) => {
     try {
         const data = await messageModel.find();
@@ -34,6 +31,7 @@ const messageDisplay = async (req, res) => {
     }
 };
 
+// Deletes a message from the database
 const messageDelete = async (req, res) => {
     try {
         const id = req.body.id;
@@ -49,11 +47,8 @@ const messageDelete = async (req, res) => {
     }
 };
 
-
-
-module.exports={
+module.exports = {
     messageInsert,
     messageDisplay,
     messageDelete,
-
 }

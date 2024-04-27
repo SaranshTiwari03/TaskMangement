@@ -1,7 +1,6 @@
-const taskModel = require("../Models/taskModel");
+const taskModel=require("../Models/taskModel")
 
-
-
+// Inserts a new task into the database
 const taskInsert = async (req, res) => {
     try {
         let priority = req.body.priority;
@@ -29,6 +28,7 @@ const taskInsert = async (req, res) => {
     }
 };
 
+// Displays all tasks from the database
 const taskDisplay = async (req, res) => {
     try {
         const data = await taskModel.find();
@@ -39,6 +39,7 @@ const taskDisplay = async (req, res) => {
     }
 };
 
+// Updates a task in the database
 const taskUpdate = async (req, res) => {
     try {
         const data = await taskModel.find();
@@ -49,7 +50,7 @@ const taskUpdate = async (req, res) => {
     }
 };
 
-
+// Deletes a task from the database
 const taskDelete = async (req, res) => {
     try {
         const id = req.body.id;
@@ -65,7 +66,7 @@ const taskDelete = async (req, res) => {
     }
 };
 
-
+// Fetches task data for editing
 const taskEditData = async (req, res) => {
     try {
         const id = req.body.id;
@@ -77,6 +78,7 @@ const taskEditData = async (req, res) => {
     }
 };
 
+// Saves edited task data
 const editsave = async (req, res) => {
     try {
         const priority = req.body.priority;
@@ -103,41 +105,35 @@ const editsave = async (req, res) => {
     }
 };
 
-
-const statusdisplay=async (req, res) => {
+// Displays task status
+const statusdisplay = async (req, res) => {
     try {
-      const todo = await   taskModel.findById(req.params.id);
-      if (!todo) {
-        return res.status(404).json({ message: 'Todo not found' });
-      }
+        const todo = await taskModel.findById(req.params.id);
+        if (!todo) {
+            return res.status(404).json({ message: 'Todo not found' });
+        }
   
-    todo.status = req.body.status || todo.status;
-    const updatedTodo = await todo.save();
+        todo.status = req.body.status || todo.status;
+        const updatedTodo = await todo.save();
         res.json(updatedTodo);
     } catch (err) {
         res.status(400).json({ message: err.message });
     }
-}
+};
 
-const updateTaskPriority =async (req, res) => {
-    try{
+// Updates task priority
+const updateTaskPriority = async (req, res) => {
+    try {
         const taskId = req.params.id;
         const { priority } = req.body;
           
-        await taskModel.findByIdAndUpdate(taskId,{priority:priority});
-        
-
-    }catch(err){
+        await taskModel.findByIdAndUpdate(taskId, { priority: priority });
+    } catch (err) {
         res.status(400).json({ message: err.message });
     }
-   
-  };
+};
 
-
-
-
-
-module.exports={
+module.exports = {
     taskInsert,
     taskDisplay,
     taskUpdate,
